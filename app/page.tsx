@@ -34,28 +34,6 @@ export default function IndexPage({
 
   useEffect(() => {
     if (!studentsAreProcessed && students.length > 0) {
-      /* const fetchData = async () => {
-        try {
-          const processedStudents = await Promise.all(students.map(async (student) => {
-            const response = await fetch(`https://coderbyte.com/api/organization/candidates/${student.email}`, {
-              method: 'GET',
-              headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${process.env.CODERBYTE_API_KEY}`,
-              },
-            });
-            const result = await response.json();
-            student.completed_2023_1 = assessments.every(assessment =>
-              result.data.some((userAssessment: any) => userAssessment.test_id === assessment.id)
-            );
-            console.log(student);
-            return student;
-          }));
-          setStudents(processedStudents);
-        } catch (error) {
-          console.error('Error fetching data:', error);
-        }
-      }; */
       fetchData(students, assessments, setStudents);
       setStudentsAreProcessed(true);
     }

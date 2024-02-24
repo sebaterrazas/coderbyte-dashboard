@@ -35,7 +35,7 @@ import {
                 <Text>{student.email}</Text>
               </TableCell>
               <TableCell>
-                <Text>{student.completed_2023_1 || 'null'}</Text>
+                <Text>{student.completed_2023_1 ? 'Completado' : 'No completado'}</Text>
               </TableCell>
             </TableRow>
           ))}
